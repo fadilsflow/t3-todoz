@@ -54,7 +54,7 @@ model Todo {
 }
 ```
 ## License
-MIT License - see the [LICENSE](LICENSE) 
+JAVA License - see the [LICENSE](LICENSE) 
 
 ## Acknowledgments
 
