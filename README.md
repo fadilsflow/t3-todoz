@@ -1,29 +1,64 @@
-# Create T3 App
+# T3 Stack Todo App
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+A full-stack Todo application built with the T3 Stack (Next.js, TypeScript, Prisma, tRPC, and Tailwind CSS).
+![preview](./preview.png)
+## Tech Stack
 
-## What's next? How do I make an app with this?
+- [Next.js](https://nextjs.org) - React framework for production
+- [TypeScript](https://www.typescriptlang.org/) - Static typing for JavaScript
+- [Prisma](https://prisma.io) - Database ORM
+- [tRPC](https://trpc.io) - End-to-end typesafe APIs
+- [Tailwind CSS](https://tailwindcss.com) - Utility-first CSS framework
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+## Getting Started
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+1. Clone the repository:
+```bash
+git clone <your-repo-url>
+cd t3-todo-app
+```
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
 
-## Learn More
+3. Set up your environment variables:
+```bash
+cp .env.example .env
+```
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+4. Set up the database:
+```bash
+npx prisma db push
+```
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+5. Run the development server:
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+### Database Schema
 
-## How do I deploy this?
+```prisma
+model Todo {
+    id        String   @id @default(cuid())
+    title     String
+    completed Boolean  @default(false)
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+```
+## License
+MIT License - see the [LICENSE](LICENSE) 
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+## Acknowledgments
+
+- [Create T3 App](https://create.t3.gg/)
+- [Prisma Documentation](https://www.prisma.io/docs/)
+- [tRPC Documentation](https://trpc.io/docs)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
